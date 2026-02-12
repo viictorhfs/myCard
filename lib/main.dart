@@ -11,25 +11,44 @@ class MeuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.blue,
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: 100.0,
-                color: Colors.white,
-                child: Text('Container 1'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(height: 100.0, width: 100.0, color: Colors.white),
+                  Container(height: 100.0, width: 100.0, color: Colors.white),
+                ],
               ),
-              Container(
-                height: 100.0,
-                color: Colors.red,
-                child: Text('Container 2'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 150.0,
+                    width: 200.0,
+                    color: Colors.black,
+                    child: Center(
+                      child: Text(
+                        'Desafio',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0
+                        ),
+                      ),
+                    )
+                  ),
+                ],
               ),
-              Container(
-                height: 100.0,
-                color: Colors.blue,
-                child: Text('Container 3'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(height: 100.0, width: 100.0, color: Colors.white),
+                  Container(height: 100.0, width: 100.0, color: Colors.white),
+                ],
               ),
             ],
           ),

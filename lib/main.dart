@@ -1,57 +1,38 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MeuApp());
+  runApp(MeuApp());
 }
 
-class MeuApp extends StatelessWidget {
-  const MeuApp({super.key});
+class MeuApp extends StatefulWidget {
+  @override
+  State<MeuApp> createState() => _MeuAppState();
+}
+
+class _MeuAppState extends State<MeuApp> {
+  // const MeuApp({super.key});
+  int coinHead = 0;
+
+Random coinSide = new Random();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
-        body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(height: 100.0, width: 100.0, color: Colors.white),
-                  Container(height: 100.0, width: 100.0, color: Colors.white),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 150.0,
-                    width: 200.0,
-                    color: Colors.black,
-                    child: Center(
-                      child: Text(
-                        'Desafio',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0
-                        ),
-                      ),
-                    )
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(height: 100.0, width: 100.0, color: Colors.white),
-                  Container(height: 100.0, width: 100.0, color: Colors.white),
-                ],
-              ),
-            ],
+          appBar: AppBar(
+            backgroundColor: Colors.blue,
+            title: Text('The coin is: ' + (coinHead == 1 ? 'Heads' : 'Tails'),),
           ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.attach_money),
+          onPressed: () {
+            setState(() {
+              coinHead = coinSide.nextInt(2);
+            });
+            print(coinHead);
+          },
         ),
       ),
     );

@@ -6,33 +6,45 @@ void main() {
   runApp(MeuApp());
 }
 
-class MeuApp extends StatefulWidget {
-  @override
-  State<MeuApp> createState() => _MeuAppState();
-}
-
-class _MeuAppState extends State<MeuApp> {
+class MeuApp extends StatelessWidget {
   // const MeuApp({super.key});
-  int coinHead = 0;
 
-Random coinSide = new Random();
+  int coinHead = 0;
+  Random coinSide = new Random();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: Text('The coin is: ' + (coinHead == 1 ? 'Heads' : 'Tails'),),
+        backgroundColor: Colors.deepOrange,
+        body: SafeArea(
+          child: Column(
+            children: [
+              CircleAvatar(
+                backgroundImage: AssetImage('imagens/killua.jpg'),
+                radius: 50.0,
+              ),
+              Text(
+                'Victor Farias',
+                style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Pacifico',
+                ),
+              ),
+              Text(
+                'Engenheiro de Software'.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.deepOrange.shade100,
+                  fontFamily: 'Source Sans 3',
+                  letterSpacing: 2.5,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.attach_money),
-          onPressed: () {
-            setState(() {
-              coinHead = coinSide.nextInt(2);
-            });
-            print(coinHead);
-          },
         ),
       ),
     );

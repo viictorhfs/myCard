@@ -40,7 +40,7 @@ class MeuApp extends StatelessWidget {
                   color: Colors.deepOrange.shade100,
                   fontFamily: 'Source Sans 3',
                   letterSpacing: 2.5,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold
                 ),
               ),
             ],

@@ -9,9 +9,6 @@ void main() {
 class MeuApp extends StatelessWidget {
   // const MeuApp({super.key});
 
-  int coinHead = 0;
-  Random coinSide = new Random();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

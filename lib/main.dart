@@ -19,6 +19,7 @@ class MeuApp extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage('imagens/killua.jpg'),
@@ -34,7 +35,7 @@ class MeuApp extends StatelessWidget {
                 ),
               ),
               Text(
-                'Engenheiro de Software'.toUpperCase(),
+                'Software Engineer'.toUpperCase(),
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.deepOrange.shade100,
@@ -43,56 +44,47 @@ class MeuApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                    children:
-                    [
-                      Icon(
-                          Icons.phone,
-                          size: 25.0,
-                          color: Colors.deepOrange
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                          '555 16 991883412',
-                          style: TextStyle(
-                            color: Colors.deepOrange,
-                            fontFamily: 'Source Sans 3',
-                            fontSize: 20.0
-                          ),
-                      ),
-                    ],
+              SizedBox(
+                height: 20.0,
+                width: 250.0,
+                child: Divider(
+                  color: Colors.deepOrange.shade100,
                 ),
               ),
-              Container(
-                color: Colors.white,
+              Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  children:
-                  [
-                    Icon(
-                        Icons.mail,
-                        size: 25.0,
-                        color: Colors.deepOrange
+                child: ListTile(
+                  leading: Icon(
+                      Icons.phone,
+                      size: 25.0,
+                      color: Colors.deepOrange
+                  ),
+                  title: Text(
+                    '555 16 991883412',
+                    style: TextStyle(
+                        color: Colors.deepOrange,
+                        fontFamily: 'Source Sans 3',
+                        fontSize: 20.0
                     ),
-                    SizedBox(
-                      width: 10.0,
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    size: 25.0,
+                    color: Colors.deepOrange,
+                  ),
+                  title: Text(
+                    'email@email.com',
+                    style: TextStyle(
+                      color: Colors.deepOrange,
+                      fontFamily: 'Source Sans 3',
+                      fontSize: 20.0
                     ),
-                    Text(
-                      'email@email.com',
-                      style: TextStyle(
-                          color: Colors.deepOrange,
-                          fontFamily: 'Source Sans 3',
-                          fontSize: 20.0
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],
